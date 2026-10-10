@@ -1,101 +1,113 @@
 import express from 'express';
 import fs from "fs"; // Permite trabajar con file system
-import bodyParser from "body-parser";
+import path from "path";
+import { fileURLToPath } from "url";
 
 const app = express();
-app.use(bodyParser.json());
-
 // ¡Muy importante! Middleware para que Express entienda los JSON en el req.body
 app.use(express.json());
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+// Sirve imágenes y estilos desde la carpeta /public
+app.use("/public", express.static(path.join(__dirname, "public")));
+
+// Página del catálogo: http://localhost:3000/tienda
+app.get("/tienda", (req, res) => {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
 
 const readData = () => {
     try {
         const data = fs.readFileSync("./db.json");
         return JSON.parse(data);
     } catch (err) {
-        console.log(err); // Corregido: se usa 'err' en lugar de 'error'
+        console.log(err); 
     }
 };
 
 const writeData = (data) => {
     try {
-        fs.writeFileSync("./db.json", JSON.stringify(data));
+        fs.writeFileSync("./db.json", JSON.stringify(data, null, 2));
     } catch (error) {
         console.log(error);
     }
 };
 
 app.get("/", (req, res) => {
-    res.send("Bienvenido a mi primer API con Node JS !!");
+    res.send("Bienvenido a mi API de Productos Electrónicos con Node JS !!");
 });
 
-// Obtener todos los pacientes
-app.get("/pacientes", (req, res) => {
+// Obtener todos los productos
+app.get("/productos", (req, res) => {
     const data = readData();
-    res.json(data.pacientes);
+    res.json(data.productos);
 });
 
-// Obtener un paciente por ID (Ruta separada correctamente)[cite: 2]
-app.get("/pacientes/:id", (req, res) => {
+// Obtener un producto por ID
+app.get("/productos/:id", (req, res) => {
     const data = readData();
-    const id = parseInt(req.params.id); // Corregido: 'parseInt'
-    const paciente = data.pacientes.find((p) => p.id === id); // Corregido: 'data.pacientes'
-    res.json(paciente);
+    const id = parseInt(req.params.id);
+    const producto = data.productos.find((p) => p.id === id);
+    if (!producto) {
+        return res.status(404).json({ error: "Producto no encontrado" });
+    }
+    res.json(producto);
 });
 
-// Crear un nuevo paciente
-app.post("/pacientes", (req, res) => {
+// Crear un nuevo producto
+app.post("/productos", (req, res) => {
     const data = readData();
     const body = req.body;
-    const newPaciente = {
-        id: data.pacientes.length + 1,
+    const newProducto = {
+        id: data.productos.length + 1,
         ...body,
     };
-    data.pacientes.push(newPaciente);
+    data.productos.push(newProducto);
     writeData(data);
-    res.json(newPaciente);
+    res.json(newProducto);
 });
 
-// Actualizar un paciente por ID
-app.put("/pacientes/:id", (req, res) => {
+// Actualizar un producto por ID
+app.put("/productos/:id", (req, res) => {
     const data = readData();
     const id = parseInt(req.params.id);
     const body = req.body;
 
-    // Buscamos el índice del paciente en el arreglo
-    const index = data.pacientes.findIndex((p) => p.id === id);
+    // Buscamos el índice del producto en el arreglo
+    const index = data.productos.findIndex((p) => p.id === id);
 
     if (index === -1) {
-        return res.status(404).json({ error: "Paciente no encontrado" });
+        return res.status(404).json({ error: "Producto no encontrado" });
     }
 
     // Actualizamos manteniendo los datos anteriores y sobreescribiendo los nuevos
-    data.pacientes[index] = {
-        ...data.pacientes[index],
+    data.productos[index] = {
+        ...data.productos[index],
         ...body,
     };
 
     writeData(data);
-    res.json({ message: "Dato modificado con exito" });
+    res.json({ message: "Producto modificado con éxito" });
 });
 
-app.delete("/pacientes/:id", (req, res) => {
+app.delete("/productos/:id", (req, res) => {
     const data = readData();
     const id = parseInt(req.params.id);
-    const index = data.pacientes.findIndex((p) => p.id === id);
+    const index = data.productos.findIndex((p) => p.id === id);
 
-    // Validamos si el paciente no existe
+    // Validamos si el producto no existe
     if (index === -1) {
-        return res.status(404).json({ error: "Paciente no encontrado" });
+        return res.status(404).json({ error: "Producto no encontrado" });
     }
 
-    // Si sí existe, lo borramos usando la variable 'index' correcta
-    data.pacientes.splice(index, 1);
+    // Si sí existe, lo borramos
+    data.productos.splice(index, 1);
 
     writeData(data);
-    res.json({ message: "Paciente borrado con éxito" });
+    res.json({ message: "Producto borrado con éxito" });
 });
 
 app.listen(3000, () => {
-    console.log('Servidor escuchando por el puerto 3000');
+    console.log('Servidor de productos escuchando por el puerto 3000');
 });

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<productos>
+  <producto id="1">
+    <imagen>/public/image/1.jpg</imagen>
+    <nombre>Laptop Gamer Pro</nombre>
+    <categoria>Computación</categoria>
+    <descripcion>Laptop gamer de 15.6" con teclado RGB, pantalla de alta tasa de refresco y tarjeta gráfica dedicada.</descripcion>
+    <precio>1599.99</precio>
+    <descuento>10</descuento>
+    <stock>45</stock>
+  </producto>
+  <producto id="2">
+    <imagen>/public/image/2.jpg</imagen>
+    <nombre>Smartphone X-100</nombre>
+    <categoria>Telefonía</categoria>
+    <descripcion>Smartphone 5G con pantalla de 6.5", cámara dual y pantalla secundaria trasera para notificaciones.</descripcion>
+    <precio>699.50</precio>
+    <descuento>15</descuento>
+    <stock>120</stock>
+  </producto>
+  <producto id="3">
+    <imagen>/public/image/3.jpg</imagen>
+    <nombre>Auriculares con Cancelación de Ruido</nombre>
+    <categoria>Audio</categoria>
+    <descripcion>Auriculares inalámbricos over-ear con cancelación activa de ruido y hasta 30 horas de batería.</descripcion>
+    <precio>249.00</precio>
+    <descuento>0</descuento>
+    <stock>80</stock>
+  </producto>
+  <producto id="4">
+    <imagen>/public/image/4.jpg</imagen>
+    <nombre>Teclado Mecánico RGB</nombre>
+    <categoria>Accesorios</categoria>
+    <descripcion>Teclado mecánico compacto con switches táctiles e iluminación RGB personalizable.</descripcion>
+    <precio>89.99</precio>
+    <descuento>20</descuento>
+    <stock>200</stock>
+  </producto>
+  <producto id="5">
+    <imagen>/public/image/5.jpg</imagen>
+    <nombre>Monitor Curvo 34"</nombre>
+    <categoria>Computación</categoria>
+    <descripcion>Monitor ultrapanorámico curvo de 34" ideal para edición de video y multitarea.</descripcion>
+    <precio>549.00</precio>
+    <descuento>5</descuento>
+    <stock>30</stock>
+  </producto>
+  <producto id="6">
+    <imagen>/public/image/6.jpg</imagen>
+    <nombre>Smartwatch Serie 8</nombre>
+    <categoria>Telefonía</categoria>
+    <descripcion>Reloj inteligente con monitor de actividad, ritmo cardíaco y notificaciones en la muñeca.</descripcion>
+    <precio>399.00</precio>
+    <descuento>10</descuento>
+    <stock>95</stock>
+  </producto>
+  <producto id="7">
+    <imagen>/public/image/7.jpg</imagen>
+    <nombre>Cámara Mirrorless 4K</nombre>
+    <categoria>Fotografía</categoria>
+    <descripcion>Cámara mirrorless de fotograma completo con grabación de video 4K y montura E.</descripcion>
+    <precio>1199.00</precio>
+    <descuento>0</descuento>
+    <stock>25</stock>
+  </producto>
+  <producto id="8">
+    <imagen>/public/image/8.jpg</imagen>
+    <nombre>Barra de Sonido Premium</nombre>
+    <categoria>Audio</categoria>
+    <descripcion>Barra de sonido compacta con audio envolvente y conexión Bluetooth para tu TV.</descripcion>
+    <precio>450.00</precio>
+    <descuento>25</descuento>
+    <stock>60</stock>
+  </producto>
+  <producto id="9">
+    <imagen>/public/image/9.jpg</imagen>
+    <nombre>Ratón Inalámbrico Ergonómico</nombre>
+    <categoria>Accesorios</categoria>
+    <descripcion>Ratón vertical inalámbrico que reduce la tensión de la muñeca en jornadas largas.</descripcion>
+    <precio>55.50</precio>
+    <descuento>30</descuento>
+    <stock>150</stock>
+  </producto>
+  <producto id="10">
+    <imagen>/public/image/10.jpg</imagen>
+    <nombre>Disco Externo SSD 2TB</nombre>
+    <categoria>Computación</categoria>
+    <descripcion>Unidad SSD portátil de 2 TB con transferencia rápida por USB-C, resistente y ligera.</descripcion>
+    <precio>180.00</precio>
+    <descuento>15</descuento>
+    <stock>110</stock>
+  </producto>
+</productos>

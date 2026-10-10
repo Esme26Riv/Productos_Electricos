@@ -1,32 +1,104 @@
 {
-    "pacientes": [
-        {
-            "id": 1,
-            "paciente": "Ana Gómez",
-            "imc": 55,
-            "peso": 68,
-            "altura": 1.62
-        },
-        {
-            "id": 2,
-            "paciente": "Santiago Ruiz",
-            "imc": 58,
-            "peso": 75,
-            "altura": 1.75
-        },
-        {
-            "id": 1,
-            "paciente": "Ana Gómez",
-            "imc": 55,
-            "peso": 68,
-            "altura": 1.62
-        },
-        {
-            "id": 2,
-            "paciente": "Santiago Ruiz",
-            "imc": 58,
-            "peso": 75,
-            "altura": 1.75
-        }
-    ]
+  "productos": [
+    {
+      "id": 1,
+      "imagen": "/public/image/1.jpg",
+      "nombre": "Laptop Gamer Pro",
+      "categoria": "Computación",
+      "descripcion": "Laptop gamer de 15.6\" con teclado RGB, pantalla de alta tasa de refresco y tarjeta gráfica dedicada.",
+      "precio": 1599.99,
+      "descuento": 10,
+      "stock": 45
+    },
+    {
+      "id": 2,
+      "imagen": "/public/image/2.jpg",
+      "nombre": "Smartphone X-100",
+      "categoria": "Telefonía",
+      "descripcion": "Smartphone 5G con pantalla de 6.5\", cámara dual y pantalla secundaria trasera para notificaciones.",
+      "precio": 699.5,
+      "descuento": 15,
+      "stock": 120
+    },
+    {
+      "id": 3,
+      "imagen": "/public/image/3.jpg",
+      "nombre": "Auriculares con Cancelación de Ruido",
+      "categoria": "Audio",
+      "descripcion": "Auriculares inalámbricos over-ear con cancelación activa de ruido y hasta 30 horas de batería.",
+      "precio": 249.0,
+      "descuento": 0,
+      "stock": 80
+    },
+    {
+      "id": 4,
+      "imagen": "/public/image/4.jpg",
+      "nombre": "Teclado Mecánico RGB",
+      "categoria": "Accesorios",
+      "descripcion": "Teclado mecánico compacto con switches táctiles e iluminación RGB personalizable.",
+      "precio": 89.99,
+      "descuento": 20,
+      "stock": 200
+    },
+    {
+      "id": 5,
+      "imagen": "/public/image/5.jpg",
+      "nombre": "Monitor Curvo 34\"",
+      "categoria": "Computación",
+      "descripcion": "Monitor ultrapanorámico curvo de 34\" ideal para edición de video y multitarea.",
+      "precio": 549.0,
+      "descuento": 5,
+      "stock": 30
+    },
+    {
+      "id": 6,
+      "imagen": "/public/image/6.jpg",
+      "nombre": "Smartwatch Serie 8",
+      "categoria": "Telefonía",
+      "descripcion": "Reloj inteligente con monitor de actividad, ritmo cardíaco y notificaciones en la muñeca.",
+      "precio": 399.0,
+      "descuento": 10,
+      "stock": 95
+    },
+    {
+      "id": 7,
+      "imagen": "/public/image/7.jpg",
+      "nombre": "Cámara Mirrorless 4K",
+      "categoria": "Fotografía",
+      "descripcion": "Cámara mirrorless de fotograma completo con grabación de video 4K y montura E.",
+      "precio": 1199.0,
+      "descuento": 0,
+      "stock": 25
+    },
+    {
+      "id": 8,
+      "imagen": "/public/image/8.jpg",
+      "nombre": "Barra de Sonido Premium",
+      "categoria": "Audio",
+      "descripcion": "Barra de sonido compacta con audio envolvente y conexión Bluetooth para tu TV.",
+      "precio": 450.0,
+      "descuento": 25,
+      "stock": 60
+    },
+    {
+      "id": 9,
+      "imagen": "/public/image/9.jpg",
+      "nombre": "Ratón Inalámbrico Ergonómico",
+      "categoria": "Accesorios",
+      "descripcion": "Ratón vertical inalámbrico que reduce la tensión de la muñeca en jornadas largas.",
+      "precio": 55.5,
+      "descuento": 30,
+      "stock": 150
+    },
+    {
+      "id": 10,
+      "imagen": "/public/image/10.jpg",
+      "nombre": "Disco Externo SSD 2TB",
+      "categoria": "Computación",
+      "descripcion": "Unidad SSD portátil de 2 TB con transferencia rápida por USB-C, resistente y ligera.",
+      "precio": 180.0,
+      "descuento": 15,
+      "stock": 110
+    }
+  ]
 }

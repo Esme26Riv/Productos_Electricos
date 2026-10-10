@@ -1,7 +1,7 @@
 {
-  "name": "simple-nodejs-api",
+  "name": "electronics-store-api",
   "version": "1.0.0",
-  "description": "Esta es mi primer api desarrollada con nodejs",
+  "description": "API para una tienda de productos electrónicos desarrollada con Node.js",
   "keywords": [],
   "license": "ISC",
   "author": "Esmeralda Rivera",

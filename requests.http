@@ -1,26 +1,26 @@
-GET http://localhost:3000/pacientes HTTP/1.1
+GET http://localhost:3000/productos HTTP/1.1
 
 ###
-GET http://localhost:3000/pacientes/2 HTTP/1.1
+GET http://localhost:3000/productos/2 HTTP/1.1
 
 ###
-POST http://localhost:3000/pacientes HTTP/1.1
+POST http://localhost:3000/productos HTTP/1.1
 Content-Type: application/json
 
 {
-    "paciente": "Santiago Ruiz",
-    "imc": 24.5,
-    "peso": 75,
-    "altura": 1.75
+    "nombre": "Teclado Mecánico RGB",
+    "precio": 89.99,
+    "categoria": "Accesorios",
+    "stock": 200
 }
 
 ###
-PUT http://localhost:3000/pacientes/2 HTTP/1.1
+PUT http://localhost:3000/productos/2 HTTP/1.1
 Content-Type: application/json
 
 {
-    "imc": 58
+    "precio": 75.00
 }
 
 ###
-DELETE http://localhost:3000/pacientes/2 HTTP/1.1
+DELETE http://localhost:3000/productos/2 HTTP/1.1
