@@ -12,7 +12,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // Sirve imágenes y estilos desde la carpeta /public
 app.use("/public", express.static(path.join(__dirname, "public")));
 
-// Página del catálogo: http://localhost:3000/tienda
+// Página del catálogo: /tienda o la raíz /
 app.get("/tienda", (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"));
 });
@@ -34,8 +34,9 @@ const writeData = (data) => {
     }
 };
 
+// MODIFICADO: Ahora la ruta principal muestra tu index.html directamente
 app.get("/", (req, res) => {
-    res.send("Bienvenido a mi API de Productos Electrónicos con Node JS !!");
+    res.sendFile(path.join(__dirname, "index.html"));
 });
 
 // Obtener todos los productos
@@ -108,6 +109,8 @@ app.delete("/productos/:id", (req, res) => {
     res.json({ message: "Producto borrado con éxito" });
 });
 
-app.listen(3000, () => {
-    console.log('Servidor de productos escuchando por el puerto 3000');
+// MODIFICADO: Puerto dinámico compatible con Render
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Servidor de productos escuchando por el puerto ${PORT}`);
 });
