@@ -26,7 +26,8 @@
         // Función para consumir la API y mostrar los productos en pantalla
         async function cargarProductos() {
             try {
-                const response = await fetch('http://localhost:3000/productos');
+                // CORREGIDO: Usamos ruta relativa para que funcione tanto local como en Render
+                const response = await fetch('/productos');
                 const productos = await response.json();
 
                 const container = document.getElementById('productos-container');
